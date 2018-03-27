@@ -19,10 +19,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = %w[lib]
 
-  spec.required_ruby_version = '>= 1.9.3'
+  spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_dependency 'test-kitchen', '~> 1.1'
   spec.add_dependency 'fog', '~> 1.18'
+  spec.add_dependency 'buff-extensions', '>= 0.2.0'
 
   spec.add_development_dependency 'bundler', '~> 1.0'
   spec.add_development_dependency 'rake', '~> 10.0'

@@ -55,15 +55,23 @@ for your specified platform. Additional, optional overrides can be provided:
     public_key_path: [PATH TO YOUR PUBLIC SSH KEY]
     rackspace_region: [A VALID RACKSPACE DC/REGION]
     wait_for: [NUM OF SECONDS TO WAIT BEFORE TIMING OUT, DEFAULT 600]
-    no_ssh_tcp_check: [DEFAULTS TO false, SKIPS TCP CHECK WHEN true]
+    no_ssh_tcp_check: [DEFAULTS TO 'false', SKIPS TCP CHECK WHEN 'true']
     no_ssh_tcp_check_sleep: [NUM OF SECONDS TO SLEEP IF no_ssh_tcp_check IS SET]
-    networks: [LIST OF RACKSPACE NETWORK UUIDS, DEFAULT PUBLICNET AND SERVICE NET]
+    networks: [LIST OF RACKSPACE NETWORK UUIDS, BESIDES PUBLICNET AND SERVICE NET]
     rackconnect_wait: ['true' IF USING RACKCONNECT TO WAIT FOR IT TO COMPLETE]
     servicelevel_wait: ['true' IF USING MANAGED SERVICE LEVEL AUTOMATION TO WAIT FOR IT TO COMPLETE]
     no_passwd_lock: ['true' IF FOG LIBRARY SHOULD NOT LOCK ROOT ACCOUNT]
-    servicenet: ['true' IF USING THE SERVICENET IP ADDRESS TO CONNECT]
+    servicenet: [DEFAULTS TO 'true', SET TO'false' IF THE SERVICENET SHOULD NOT BE INSTALLED]
+    ssh_network_name: [IF SET, WILL USE THE SPECIFIED NETWORK NAME! TO CONNECT]
+    connect_public_net: [DEFAULTS TO 'true', SET TO 'false' TO PROVISION NO PUBLIC IP]
     config_drive: [DEFAULTS TO true, ENABLES READ-ONLY METADATA DRIVE]
     user_data: [EXTRA CONFIGURATION DATA FOR THE SERVER]
+
+Specifying ssh_network_name doesn't make sense unless you also provide at least
+one value for additional_networks. While additional_networks takes the 
+Rackspace network uuid, ssh_network_name needs the name that corresponds to
+that uuid.
+
 
 You also have the option of providing some configs via environment variables:
 

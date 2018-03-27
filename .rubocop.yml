@@ -2,12 +2,12 @@
 # into smaller classes.
 
 ClassLength:
-  Max: 131
+  Max: 150
 AbcSize:
   Max: 20
 MethodLength:
   Max: 15
 Metrics/BlockLength:
-  Max: 600
+  Max: 700
 Metrics/LineLength:
   Max: 100
